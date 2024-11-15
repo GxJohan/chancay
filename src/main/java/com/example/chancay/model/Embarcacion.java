@@ -11,7 +11,7 @@ public class Embarcacion {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    //Columna Nombre
+    //Columna Nombre de la embarcación
     @Column(length = 50, nullable = false)
     private String nombre;
 
@@ -24,7 +24,7 @@ public class Embarcacion {
     private String descipcion;
 
     //Getters and Setters
-    
+
     public int getId() {
         return id;
     }
