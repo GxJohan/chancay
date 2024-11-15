@@ -43,12 +43,31 @@ public class EmbarcacionController {
     public ResponseEntity<Embarcacion> updateEmbarcacion(@RequestBody Embarcacion embarcacion, @PathVariable Integer id){
 
         Embarcacion embarcacionActual = embarcacionService.getEmbarcacionById(id);
-        if (embarcacionActual =! null){
-            
+        if (embarcacionActual != null){
+            return ResponseEntity.ok(embarcacionActual);
         }
-
+        return ResponseEntity.notFound().build();
 
     }
+
+    //Eliminar mejor forma
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteEmbarcacion(@PathVariable Integer id){
+        Embarcacion embarcacionActual = embarcacionService.getEmbarcacionById(id);
+        if (embarcacionActual != null){
+            embarcacionService.deleteEmbarcacion(id);
+            return ResponseEntity.noContent().build();
+        }
+        return ResponseEntity.notFound().build();
+    }
+
+    //otra forma mas simple de eliminar
+
+    // @DeleteMapping("/{id}")
+    // public void deleteEmbarcacion(@PathVariable Integer id){
+    //     embarcacionService.deleteEmbarcacion(id);
+    //     return ResponseEntity.noContent().build();
+    // }
 
 
 
