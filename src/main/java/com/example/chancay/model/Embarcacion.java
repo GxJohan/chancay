@@ -21,11 +21,11 @@ public class Embarcacion {
     private double capacidad;
 
     //Columna descripción de la embarcacion
-    @Column(length = 250, nullable = true)
-    private String descipcion;
+    @Column(length = 250, nullable = false)
+    private String descripcion;
 
     // Columna Fecha
-    @Column(name = "fecha_programada")
+    @Column(name = "fecha_programada", nullable = false)
     private LocalDate fechaProgramada;
 
     //Getters and Setters
@@ -54,12 +54,12 @@ public class Embarcacion {
         this.capacidad = capacidad;
     }
 
-    public String getDescipcion() {
-        return descipcion;
+    public String getdescripcion() {
+        return descripcion;
     }
 
-    public void setDescipcion(String descipcion) {
-        this.descipcion = descipcion;
+    public void setdescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
 
     // Add getter and setter
