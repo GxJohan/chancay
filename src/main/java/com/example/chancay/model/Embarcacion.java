@@ -1,6 +1,7 @@
 package com.example.chancay.model;
 
 import jakarta.persistence.*;
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "embarcacion")
@@ -22,6 +23,10 @@ public class Embarcacion {
     //Columna descripción de la embarcacion
     @Column(length = 250, nullable = true)
     private String descipcion;
+
+    // Columna Fecha
+    @Column(name = "fecha_programada")
+    private LocalDate fechaProgramada;
 
     //Getters and Setters
 
@@ -57,9 +62,13 @@ public class Embarcacion {
         this.descipcion = descipcion;
     }
 
-    
+    // Add getter and setter
+    public LocalDate getFechaProgramada() {
+        return fechaProgramada;
+    }
 
-
-
+    public void setFechaProgramada(LocalDate fechaProgramada) {
+        this.fechaProgramada = fechaProgramada;
+    }
 
 }

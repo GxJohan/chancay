@@ -36,6 +36,7 @@ public class EmbarcacionService {
             embarcacionActual.setNombre(embarcacion.getNombre());
             embarcacionActual.setCapacidad(embarcacion.getCapacidad());
             embarcacionActual.setDescipcion(embarcacion.getDescipcion());
+            embarcacionActual.setFechaProgramada(embarcacion.getFechaProgramada()); // fecha programada
             return embarcacionRepository.save(embarcacionActual);
         }
         return null;
